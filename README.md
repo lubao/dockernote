@@ -1,6 +1,11 @@
 # Docker Note
 Note for Docker Command
 
+## Docker Run with PORT CPU MEM and overide ENTRYPOINT
+```
+sudo docker run -it -p 8080:80 --cpus=1 --memory=512m --entrypoint /bin/bash $DOCKER_IMAGE
+```
+
 ## How to continue a Docker container which has exited
 ```
 sudo docker start -a -i `sudo docker ps -q -l`
