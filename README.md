@@ -1,6 +1,17 @@
 # Docker Note
 Note for Docker Command
 
+## Remove all images
+
+*Remember, you should remove all the containers before removing all the images from which those containers were created.*
+
+```
+docker rm -vf $(docker ps -a -q)
+```
+```
+docker rmi -f $(docker images -a -q)
+```
+
 ## Docker Run with PORT CPU MEM and overide ENTRYPOINT
 ```
 sudo docker run -it -p 8080:80 --cpus=1 --memory=512m --entrypoint /bin/bash $DOCKER_IMAGE
